@@ -1,0 +1,38 @@
+.cep-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cep-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--ion-color-primary);
+}
+
+.cep-container p {
+  margin-bottom: 1.5rem;
+  color: var(--ion-color-medium);
+}
+
+ion-button {
+  margin-top: 1rem;
+}
+
+ion-list {
+  background: transparent;
+}
+
+ion-item {
+  --padding-start: 0;
+}
+
+ion-item h3 {
+  font-weight: 600;
+  color: var(--ion-color-primary);
+  margin-bottom: 4px;
+}
+
+ion-item p {
+  font-size: 1rem;
+  color: var(--ion-color-dark);
+}

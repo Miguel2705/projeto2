@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sobre o Aluno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="aluno-container">
+    <h2>Informações do Aluno</h2>
+
+    <ion-card>
+      <ion-card-content class="photo-card">
+        <div class="photo-container">
+          <img src="https://via.placeholder.com/200x200.png?text=Sua+Foto" alt="Foto do aluno">
+        </div>
+        <p class="photo-hint">Adicione sua foto aqui</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon name="person-circle" style="margin-right: 8px;"></ion-icon>
+          Dados Pessoais
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label>
+              <h3>Nome</h3>
+              <p>Miguel Lourenço da Silva</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Código do Aluno</h3>
+              <p>24103665</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Turma</h3>
+              <p>ADS2N</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Unidade</h3>
+              <p>Bangu</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Horário</h3>
+              <p>Manhã</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="block" routerLink="/" color="primary">
+      <ion-icon name="home" slot="start"></ion-icon>
+      Voltar para o Início
+    </ion-button>
+  </div>
+</ion-content>

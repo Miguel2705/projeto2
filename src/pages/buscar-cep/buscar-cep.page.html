@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Buscar CEP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="cep-container">
+    <h2>Consulta de CEP</h2>
+    <p>Digite o CEP para buscar o endereço:</p>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">CEP (somente números)</ion-label>
+          <ion-input
+            type="tel"
+            [(ngModel)]="cep"
+            (ionInput)="formatarCep($event)"
+            placeholder="00000000"
+            maxlength="8"
+          ></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="buscarCep()" [disabled]="carregando">
+          <ion-icon name="search" slot="start" *ngIf="!carregando"></ion-icon>
+          <ion-spinner name="crescent" *ngIf="carregando"></ion-spinner>
+          {{ carregando ? 'Buscando...' : 'Buscar CEP' }}
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="erro" color="danger">
+      <ion-card-content>
+        <ion-icon name="alert-circle" style="margin-right: 8px;"></ion-icon>
+        {{ erro }}
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="resultado">
+      <ion-card-header>
+        <ion-card-title>Endereço Encontrado</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label>
+              <h3>CEP</h3>
+              <p>{{ resultado.cep }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Logradouro</h3>
+              <p>{{ resultado.logradouro || 'N/A' }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Bairro</h3>
+              <p>{{ resultado.bairro || 'N/A' }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Localidade (Cidade)</h3>
+              <p>{{ resultado.localidade }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>UF (Estado)</h3>
+              <p>{{ resultado.uf }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Página Inicial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="home-container">
+    <h1>Bem-vindo!</h1>
+    <p>Selecione uma opção abaixo:</p>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-button expand="block" routerLink="/buscar-cep">
+          <ion-icon name="search" slot="start"></ion-icon>
+          Buscar CEP
+        </ion-button>
+
+        <ion-button expand="block" routerLink="/sobre-aluno" color="secondary">
+          <ion-icon name="person" slot="start"></ion-icon>
+          Sobre o Aluno
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
